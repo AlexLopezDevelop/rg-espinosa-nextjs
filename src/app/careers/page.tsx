@@ -25,15 +25,16 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#051A2D] py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-blue" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm mb-6">
-            <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
-            <span className="text-gray-600">/</span>
-            <span className="text-white">Careers</span>
+            <Link href="/" className="text-white/80 hover:text-white">Home</Link>
+            <span className="text-white/50">/</span>
+            <span className="text-white font-medium">Careers</span>
           </nav>
           <h1 className="text-4xl font-bold text-white mb-4">Join Our Team</h1>
-          <p className="text-lg text-gray-300 max-w-2xl">
+          <p className="text-lg text-white/90 max-w-2xl">
             Build your career with a leading international insurance adjusting firm.
           </p>
         </div>
@@ -44,7 +45,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-[#051A2D] mb-6">Why Work at R&G Espinosa?</h2>
+              <h2 className="text-3xl font-bold text-brand-blue mb-6">Why Work at R&G Espinosa?</h2>
               <p className="text-gray-600 mb-4">
                 At R&G Espinosa, we believe our people are our greatest asset. We foster a collaborative
                 environment where talent is recognized, growth is encouraged, and excellence is rewarded.
@@ -70,12 +71,12 @@ export default function CareersPage() {
       {/* Benefits */}
       <section className="py-16 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#051A2D] mb-12 text-center">Benefits & Perks</h2>
+          <h2 className="text-3xl font-bold text-brand-navy mb-12 text-center">Benefits & Perks</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => (
               <div key={i} className="bg-white rounded-lg p-6 border border-gray-200">
-                <h4 className="font-semibold text-[#051A2D] mb-2">{benefit.title}</h4>
+                <h4 className="font-semibold text-brand-navy mb-2">{benefit.title}</h4>
                 <p className="text-sm text-gray-600">{benefit.desc}</p>
               </div>
             ))}
@@ -86,13 +87,13 @@ export default function CareersPage() {
       {/* Open Positions */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#051A2D] mb-12 text-center">Current Opportunities</h2>
+          <h2 className="text-3xl font-bold text-brand-navy mb-12 text-center">Current Opportunities</h2>
 
           <div className="space-y-4">
             {positions.map((position, i) => (
               <div key={i} className="bg-white rounded-lg p-6 border border-gray-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h4 className="font-semibold text-lg text-[#051A2D]">{position.title}</h4>
+                  <h4 className="font-semibold text-lg text-brand-navy">{position.title}</h4>
                   <div className="flex flex-wrap gap-3 text-sm text-gray-500 mt-1">
                     <span className="flex items-center gap-1">
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -105,7 +106,7 @@ export default function CareersPage() {
                   </div>
                   <p className="text-sm text-gray-600 mt-2">{position.desc}</p>
                 </div>
-                <Button className="bg-[#004E99] hover:bg-[#003d7a] shrink-0">Apply Now</Button>
+                <Button className="bg-brand-blue hover:bg-brand-blue-hover shrink-0">Apply Now</Button>
               </div>
             ))}
           </div>
@@ -117,13 +118,13 @@ export default function CareersPage() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-[#051A2D] mb-4">Submit Your Application</h2>
+              <h2 className="text-3xl font-bold text-brand-navy mb-4">Submit Your Application</h2>
               <p className="text-gray-600 mb-8">
                 Don&apos;t see a position that matches? Submit your CV and we&apos;ll keep you in mind for future opportunities.
               </p>
 
               <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <h4 className="font-semibold text-[#051A2D] mb-4">Our Hiring Process</h4>
+                <h4 className="font-semibold text-brand-navy mb-4">Our Hiring Process</h4>
                 <div className="space-y-4">
                   {[
                     { step: "1", title: "Submit Your CV", desc: "Complete the form with your information" },
@@ -131,11 +132,11 @@ export default function CareersPage() {
                     { step: "3", title: "Interview Process", desc: "Meet with hiring managers and team" },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
-                      <div className="w-8 h-8 rounded bg-[#004E99] text-white flex items-center justify-center text-sm font-semibold shrink-0">
+                      <div className="w-8 h-8 rounded bg-brand-blue text-white flex items-center justify-center text-sm font-semibold shrink-0">
                         {item.step}
                       </div>
                       <div>
-                        <div className="font-medium text-[#051A2D]">{item.title}</div>
+                        <div className="font-medium text-brand-navy">{item.title}</div>
                         <div className="text-sm text-gray-500">{item.desc}</div>
                       </div>
                     </div>
@@ -145,7 +146,7 @@ export default function CareersPage() {
             </div>
 
             <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h3 className="text-xl font-semibold text-[#051A2D] mb-6">Application Form</h3>
+              <h3 className="text-xl font-semibold text-brand-navy mb-6">Application Form</h3>
 
               <form className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
@@ -202,7 +203,7 @@ export default function CareersPage() {
                   <Textarea placeholder="Tell us about yourself..." rows={3} />
                 </div>
 
-                <Button className="w-full bg-[#004E99] hover:bg-[#003d7a]" size="lg">
+                <Button className="w-full bg-brand-blue hover:bg-brand-blue-hover" size="lg">
                   Submit Application
                 </Button>
               </form>

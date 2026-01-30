@@ -39,10 +39,10 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-[#004E99]",
+                "text-sm font-medium transition-colors hover:text-brand-blue",
                 pathname === link.href
-                  ? "text-[#004E99]"
-                  : "text-[#051A2D]/70"
+                  ? "text-brand-blue"
+                  : "text-gray-700"
               )}
             >
               {link.label}
@@ -50,7 +50,7 @@ export function Header() {
           ))}
         </nav>
 
-        <Button className="bg-[#004E99] hover:bg-[#003d7a] text-white">
+        <Button className="bg-brand-blue hover:bg-brand-blue-hover text-white">
           Report a Claim
         </Button>
       </div>

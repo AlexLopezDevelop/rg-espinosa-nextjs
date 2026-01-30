@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="bg-[#051A2D] text-white">
+    <footer className="bg-brand-navy text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Brand */}
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         {/* Certifications */}
-        <div className="border-t border-white/10 mt-12 pt-8">
+        <div className="border-t border-brand-orange/30 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-6">
               <div className="bg-white p-2 rounded">
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-brand-orange/30 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
             &copy; 2026 R&G Espinosa International Adjusters. All rights reserved.
           </p>

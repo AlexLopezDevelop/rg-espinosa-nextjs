@@ -20,15 +20,16 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#051A2D] py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-blue" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm mb-6">
-            <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
-            <span className="text-gray-600">/</span>
-            <span className="text-white">About Us</span>
+            <Link href="/" className="text-white/80 hover:text-white">Home</Link>
+            <span className="text-white/50">/</span>
+            <span className="text-white font-medium">About Us</span>
           </nav>
           <h1 className="text-4xl font-bold text-white mb-4">About R&G Espinosa</h1>
-          <p className="text-lg text-gray-300 max-w-2xl">
+          <p className="text-lg text-white/90 max-w-2xl">
             International insurance adjusters serving the Americas since 2005.
           </p>
         </div>
@@ -48,7 +49,7 @@ export default function AboutPage() {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-[#051A2D] mb-6">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-brand-blue mb-6">Our Mission</h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 R&G Espinosa International Adjusters was founded with a clear mission: to deliver
                 exceptional claims adjusting services that combine deep local knowledge with
@@ -68,7 +69,7 @@ export default function AboutPage() {
                   { title: "Global Reach", desc: "Local expertise, international standards" },
                 ].map((value, i) => (
                   <div key={i}>
-                    <h4 className="font-semibold text-[#051A2D]">{value.title}</h4>
+                    <h4 className="font-semibold text-brand-blue">{value.title}</h4>
                     <p className="text-sm text-gray-500">{value.desc}</p>
                   </div>
                 ))}
@@ -81,19 +82,19 @@ export default function AboutPage() {
       {/* Timeline */}
       <section className="py-16 bg-gray-50 border-y border-gray-200">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#051A2D] mb-12 text-center">Our History</h2>
+          <h2 className="text-3xl font-bold text-brand-blue mb-12 text-center">Our History</h2>
 
           <div className="space-y-8">
             {timeline.map((item, i) => (
               <div key={i} className="flex gap-6">
                 <div className="w-20 shrink-0 text-right">
-                  <span className="text-[#004E99] font-bold text-lg">{item.year}</span>
+                  <span className="text-brand-blue font-bold text-lg">{item.year}</span>
                 </div>
-                <div className="w-px bg-[#004E99]/30 relative">
-                  <div className="absolute top-1 -left-1.5 w-3 h-3 rounded-full bg-[#004E99]" />
+                <div className="w-px bg-brand-blue/30 relative">
+                  <div className="absolute top-1 -left-1.5 w-3 h-3 rounded-full bg-brand-blue" />
                 </div>
                 <div className="pb-8">
-                  <h4 className="font-semibold text-[#051A2D]">{item.title}</h4>
+                  <h4 className="font-semibold text-brand-blue">{item.title}</h4>
                   <p className="text-sm text-gray-600 mt-1">{item.description}</p>
                 </div>
               </div>
@@ -105,7 +106,7 @@ export default function AboutPage() {
       {/* Leadership */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#051A2D] mb-12 text-center">Leadership Team</h2>
+          <h2 className="text-3xl font-bold text-brand-blue mb-12 text-center">Leadership Team</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {leaders.map((leader, i) => (
@@ -114,8 +115,8 @@ export default function AboutPage() {
                   <Image src={leader.image} alt={leader.name} fill className="object-cover" />
                 </div>
                 <div className="p-6">
-                  <h4 className="font-semibold text-lg text-[#051A2D]">{leader.name}</h4>
-                  <span className="text-sm text-[#004E99]">{leader.title}</span>
+                  <h4 className="font-semibold text-lg text-brand-blue">{leader.name}</h4>
+                  <span className="text-sm text-brand-orange">{leader.title}</span>
                   <p className="text-sm text-gray-600 mt-3">{leader.bio}</p>
                 </div>
               </div>
@@ -123,7 +124,7 @@ export default function AboutPage() {
           </div>
 
           <div className="text-center mt-10">
-            <Button variant="outline" className="border-[#004E99] text-[#004E99]" asChild>
+            <Button variant="outline" className="border-brand-blue text-brand-blue" asChild>
               <Link href="/team">View Full Team</Link>
             </Button>
           </div>
@@ -131,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 bg-[#004E99]">
+      <section className="py-16 bg-brand-blue">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -152,13 +153,13 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-[#051A2D] mb-4">Ready to Work Together?</h2>
+          <h2 className="text-2xl font-bold text-brand-blue mb-4">Ready to Work Together?</h2>
           <p className="text-gray-600 mb-8">Contact us to discuss how we can support your claims management needs.</p>
           <div className="flex justify-center gap-4">
-            <Button className="bg-[#004E99] hover:bg-[#003d7a]" asChild>
+            <Button className="bg-brand-blue hover:bg-brand-blue-hover" asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
-            <Button variant="outline" className="border-[#004E99] text-[#004E99]">Download Brochure</Button>
+            <Button variant="outline" className="border-brand-blue text-brand-blue">Download Brochure</Button>
           </div>
         </div>
       </section>

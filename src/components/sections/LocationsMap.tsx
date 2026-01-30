@@ -105,9 +105,9 @@ const offices: Office[] = [
 ];
 
 const markerColors = {
-  hq: "#004E99",
-  regional: "#22A9FF",
-  hiru: "#FB8501",
+  hq: "#0085bc",
+  regional: "#4395d1",
+  hiru: "#ff8000",
 };
 
 export function LocationsMap() {
@@ -154,7 +154,7 @@ export function LocationsMap() {
               <MarkerLabel
                 position="bottom"
                 className={`mt-1 text-[11px] font-bold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] ${
-                  office.type === "hiru" ? "text-[#FB8501]" : "text-white"
+                  office.type === "hiru" ? "text-[#ff8000]" : "text-white"
                 }`}
               >
                 {office.city}
@@ -188,7 +188,7 @@ export function LocationsMap() {
                       <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
-                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-[#004E99] hover:underline">
+                      <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-brand-blue hover:underline">
                         {office.phone}
                       </a>
                     </div>
@@ -196,7 +196,7 @@ export function LocationsMap() {
                       <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      <a href={`mailto:${office.email}`} className="text-[#004E99] hover:underline">
+                      <a href={`mailto:${office.email}`} className="text-brand-blue hover:underline">
                         {office.email}
                       </a>
                     </div>
@@ -206,7 +206,7 @@ export function LocationsMap() {
                     href={`https://www.google.com/maps/search/?api=1&query=${office.coordinates[1]},${office.coordinates[0]}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 block text-center py-2 px-4 bg-[#004E99] text-white text-sm font-medium rounded-lg hover:bg-[#003d7a] transition-colors"
+                    className="mt-4 block text-center py-2 px-4 bg-brand-blue text-white text-sm font-medium rounded-lg hover:bg-brand-blue-hover transition-colors"
                   >
                     Get Directions
                   </a>
@@ -221,15 +221,15 @@ export function LocationsMap() {
       <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-gray-100">
         <div className="space-y-2 text-xs">
           <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#004E99]" />
+            <span className="w-3 h-3 rounded-full bg-[#0085bc]" />
             <span className="text-gray-600">Headquarters</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#22A9FF]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#4395d1]" />
             <span className="text-gray-600">Regional Office</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FB8501]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ff8000]" />
             <span className="text-gray-600">HIRU Center</span>
           </div>
         </div>

@@ -16,7 +16,8 @@ export default function HomePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[#051A2D]/85" />
+          {/* Blue gradient overlay like the brand posts */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0085bc]/90 via-[#4395d1]/85 to-[#0085bc]/90" />
         </div>
 
         {/* Content */}
@@ -24,16 +25,16 @@ export default function HomePage() {
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
             Professional Claims Management<br className="hidden lg:block" /> Across the Americas
           </h1>
-          <p className="text-lg lg:text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg lg:text-xl text-white/80 mb-10 leading-relaxed max-w-3xl mx-auto">
             Since 2005, R&G Espinosa has delivered expert claims adjusting services
             combining deep local knowledge with rigorous international standards.
             We serve insurers, reinsurers, and corporations throughout the Americas and beyond.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-16">
-            <Button size="lg" className="bg-[#004E99] hover:bg-[#003d7a] text-white px-8">
+            <Button size="lg" className="bg-white text-brand-blue hover:bg-white/90 px-8 font-semibold">
               Report a Claim
             </Button>
-            <Button size="lg" className="bg-white text-[#051A2D] hover:bg-gray-100 px-8">
+            <Button size="lg" className="bg-brand-orange hover:bg-brand-orange-hover text-white px-8 font-semibold">
               Request a Quote
             </Button>
           </div>
@@ -48,7 +49,7 @@ export default function HomePage() {
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-3xl lg:text-4xl font-bold text-white">{stat.number}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -61,7 +62,7 @@ export default function HomePage() {
               <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <span className="font-medium text-[#051A2D] text-sm">ISO 27001:2022 Certified</span>
+              <span className="font-medium text-brand-navy text-sm">ISO 27001:2022 Certified</span>
               <span className="text-gray-300 mx-2">|</span>
               <div className="flex items-center gap-4 text-sm text-gray-500">
                 <span>CILA Member</span>
@@ -106,7 +107,7 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-[#051A2D] mb-4">
+            <h2 className="text-3xl font-bold text-brand-blue mb-4">
               Our Service Divisions
             </h2>
             <p className="text-gray-600 max-w-2xl">
@@ -140,18 +141,18 @@ export default function HomePage() {
             ].map((service, i) => (
               <div
                 key={i}
-                className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-[#004E99] transition-colors"
+                className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-brand-blue transition-colors"
               >
-                <div className="w-10 h-10 bg-[#004E99] rounded flex items-center justify-center mb-4">
+                <div className="w-10 h-10 bg-brand-blue rounded flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={service.icon} />
                   </svg>
                 </div>
-                <h3 className="font-semibold text-[#051A2D] mb-2">{service.title}</h3>
+                <h3 className="font-semibold text-brand-blue mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-600 mb-4">{service.description}</p>
                 <Link
                   href="/services"
-                  className="text-sm font-medium text-[#004E99] hover:underline"
+                  className="text-sm font-medium text-brand-blue hover:underline"
                 >
                   Learn more →
                 </Link>
@@ -166,7 +167,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-[#051A2D] mb-6">
+              <h2 className="text-3xl font-bold text-brand-blue mb-6">
                 Why Work With R&G Espinosa
               </h2>
               <div className="space-y-4">
@@ -177,13 +178,13 @@ export default function HomePage() {
                   { title: "ISO 27001 Certified", desc: "Information security management certified to international standards." },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="w-6 h-6 rounded-full bg-[#004E99] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center shrink-0 mt-0.5">
                       <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-[#051A2D]">{item.title}</h4>
+                      <h4 className="font-semibold text-brand-blue">{item.title}</h4>
                       <p className="text-sm text-gray-600">{item.desc}</p>
                     </div>
                   </div>
@@ -204,7 +205,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-[#004E99]">
+      <section className="py-16 bg-brand-blue">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
             Need to Report a Claim?
@@ -213,10 +214,10 @@ export default function HomePage() {
             Our team is available 24/7 to assist with your claims management needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-white text-[#004E99] hover:bg-gray-100">
+            <Button size="lg" className="bg-white text-brand-blue hover:bg-white/90 font-semibold">
               Report a Claim
             </Button>
-            <Button size="lg" asChild className="bg-transparent border border-white text-white hover:bg-white/10">
+            <Button size="lg" asChild className="bg-transparent border-2 border-white text-white hover:bg-white/10">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

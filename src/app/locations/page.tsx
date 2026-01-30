@@ -97,15 +97,16 @@ export default function LocationsPage() {
   return (
     <>
       {/* Page Hero */}
-      <section className="bg-[#051A2D] py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-blue via-brand-blue-light to-brand-blue" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <nav className="flex items-center gap-2 text-sm mb-6">
-            <Link href="/" className="text-gray-400 hover:text-white">Home</Link>
-            <span className="text-gray-600">/</span>
-            <span className="text-white">Locations</span>
+            <Link href="/" className="text-white/80 hover:text-white">Home</Link>
+            <span className="text-white/50">/</span>
+            <span className="text-white font-medium">Locations</span>
           </nav>
           <h1 className="text-4xl font-bold text-white mb-4">Our Locations</h1>
-          <p className="text-lg text-gray-300 max-w-2xl">
+          <p className="text-lg text-white/90 max-w-2xl">
             With 13+ offices across the Americas and Europe, we&apos;re always close
             to where you need us.
           </p>
@@ -122,7 +123,7 @@ export default function LocationsPage() {
       {/* Office Cards */}
       <section className="py-16 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#051A2D] mb-12 text-center">Our Offices</h2>
+          <h2 className="text-3xl font-bold text-brand-orange mb-12 text-center">Our Offices</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {offices.map((office) => (
@@ -130,21 +131,21 @@ export default function LocationsPage() {
                 key={office.id}
                 className={`bg-white rounded-lg p-6 border ${
                   office.type === "hq"
-                    ? "border-[#004E99] border-2"
+                    ? "border-brand-blue border-2"
                     : "border-gray-200"
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">{office.flag}</span>
                   {office.type === "hq" && (
-                    <span className="text-xs font-medium text-[#004E99] uppercase">Headquarters</span>
+                    <span className="text-xs font-medium text-brand-blue uppercase">Headquarters</span>
                   )}
                   {office.type === "hiru" && (
                     <span className="text-xs font-medium text-orange-600 uppercase">HIRU Center</span>
                   )}
                 </div>
 
-                <h3 className="text-lg font-semibold text-[#051A2D] mb-1">{office.city}</h3>
+                <h3 className="text-lg font-semibold text-brand-blue mb-1">{office.city}</h3>
                 <p className="text-sm text-gray-500 mb-4">{office.country}</p>
 
                 <div className="space-y-2 text-sm">
@@ -159,7 +160,7 @@ export default function LocationsPage() {
                     <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-[#004E99] hover:underline">
+                    <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-brand-blue hover:underline">
                       {office.phone}
                     </a>
                   </div>
@@ -167,7 +168,7 @@ export default function LocationsPage() {
                     <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <a href={`mailto:${office.email}`} className="text-[#004E99] hover:underline truncate">
+                    <a href={`mailto:${office.email}`} className="text-brand-blue hover:underline truncate">
                       {office.email}
                     </a>
                   </div>
@@ -185,13 +186,13 @@ export default function LocationsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-[#004E99]">
+      <section className="py-16 bg-brand-blue">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Can&apos;t Find an Office Near You?</h2>
           <p className="text-white/80 mb-8">
             Contact our headquarters and we&apos;ll connect you with the right team.
           </p>
-          <Button size="lg" asChild className="bg-white text-[#004E99] hover:bg-gray-100">
+          <Button size="lg" asChild className="bg-white text-brand-blue hover:bg-gray-100">
             <Link href="/contact">Contact Us</Link>
           </Button>
         </div>
