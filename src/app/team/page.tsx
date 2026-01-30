@@ -196,7 +196,6 @@ export default function TeamPage() {
           <div className="space-y-6">
             {teamByCountry.map((location, i) => {
               const isExpanded = expandedSections.includes(i);
-              const memberCount = location.members.length;
 
               return (
                 <div key={i} className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden transition-all hover:border-brand-blue/30">
@@ -213,9 +212,6 @@ export default function TeamPage() {
                             <p className="text-sm text-white/70">{location.subtitle}</p>
                           )}
                         </div>
-                        <span className="ml-4 px-3 py-1 bg-brand-orange text-white text-sm font-semibold rounded-full">
-                          {memberCount} {memberCount === 1 ? 'Member' : 'Members'}
-                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-white/80 text-sm font-medium">
