@@ -63,7 +63,7 @@ export default function TeamPage() {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {leaders.map((leader, i) => (
-              <div key={i} className="border border-gray-200 rounded-lg overflow-hidden">
+              <div key={i} className="border border-gray-200 rounded-sm overflow-hidden">
                 <div className="aspect-square relative">
                   <Image src={leader.image} alt={leader.name} fill className="object-cover" />
                 </div>

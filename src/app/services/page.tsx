@@ -77,7 +77,7 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=500&fit=crop"
                 alt="Claims adjusting services"
@@ -98,7 +98,7 @@ export default function ServicesPage() {
           <div className="space-y-12">
             {services.map((service, i) => (
               <div key={i} className={`grid lg:grid-cols-2 gap-8 items-center ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
-                <div className={`rounded-lg overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+                <div className={`rounded-sm overflow-hidden ${i % 2 === 1 ? "lg:order-2" : ""}`}>
                   <Image src={service.image} alt={service.title} width={600} height={400} className="w-full h-auto" />
                 </div>
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>

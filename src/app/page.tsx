@@ -47,7 +47,7 @@ export default function HomePage() {
             </div>
 
             <div className="relative">
-              <div className="relative rounded-lg overflow-hidden">
+              <div className="relative rounded-sm overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
                   alt="Professional team of insurance adjusters"
@@ -195,7 +195,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=450&fit=crop"
                 alt="Professional claims adjusting"

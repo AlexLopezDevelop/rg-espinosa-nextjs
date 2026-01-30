@@ -38,7 +38,7 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=500&fit=crop"
                 alt="R&G Espinosa corporate office"
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {leaders.map((leader, i) => (
-              <div key={i} className="border border-gray-200 rounded-lg overflow-hidden">
+              <div key={i} className="border border-gray-200 rounded-sm overflow-hidden">
                 <div className="aspect-square relative">
                   <Image src={leader.image} alt={leader.name} fill className="object-cover" />
                 </div>

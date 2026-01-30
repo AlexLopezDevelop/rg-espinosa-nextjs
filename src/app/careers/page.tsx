@@ -54,7 +54,7 @@ export default function CareersPage() {
                 and handling diverse, challenging claims across multiple industries.
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden">
+            <div className="rounded-sm overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop"
                 alt="Team collaboration"
