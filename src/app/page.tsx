@@ -21,9 +21,6 @@ export default function HomePage() {
 
         {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
-          <p className="text-[#22A9FF] font-medium mb-4 tracking-wide uppercase text-sm">
-            International Insurance Adjusters
-          </p>
           <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
             Professional Claims Management<br className="hidden lg:block" /> Across the Americas
           </h1>
