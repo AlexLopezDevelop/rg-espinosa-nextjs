@@ -200,7 +200,7 @@ export default function HomePage() {
             <Button size="lg" className="bg-white text-[#004E99] hover:bg-gray-100">
               Report a Claim
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white/10">
               Contact Us
             </Button>
           </div>

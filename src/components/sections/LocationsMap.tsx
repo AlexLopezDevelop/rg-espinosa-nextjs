@@ -151,7 +151,12 @@ export function LocationsMap() {
                   />
                 )}
               </div>
-              <MarkerLabel position="bottom" className="mt-1 text-[11px] font-semibold text-gray-700">
+              <MarkerLabel
+                position="bottom"
+                className={`mt-1 text-[11px] font-bold drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] ${
+                  office.type === "hiru" ? "text-[#FB8501]" : "text-white"
+                }`}
+              >
                 {office.city}
               </MarkerLabel>
             </MarkerContent>

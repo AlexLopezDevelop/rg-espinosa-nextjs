@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,13 +8,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#004E99] via-[#22A9FF] to-[#FFB703] flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4L12 20L20 4" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold">R&G Espinosa</span>
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="https://rygespinosa.com/wp-content/uploads/2023/08/logo-white.png"
+                alt="R&G Espinosa International Adjusters"
+                width={160}
+                height={45}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               International insurance adjusters delivering local knowledge

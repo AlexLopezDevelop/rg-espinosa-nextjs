@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -21,13 +22,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#004E99] via-[#22A9FF] to-[#FFB703] flex items-center justify-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 4L12 20L20 4" />
-            </svg>
-          </div>
-          <span className="text-xl font-bold text-[#051A2D]">R&G Espinosa</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="https://rygespinosa.com/wp-content/uploads/2023/04/main-logo-default.svg"
+            alt="R&G Espinosa International Adjusters"
+            width={180}
+            height={50}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
