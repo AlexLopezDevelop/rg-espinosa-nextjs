@@ -60,29 +60,50 @@ export default function HomePage() {
         {/* Credentials Bar */}
         <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                <span className="font-medium text-[#051A2D] text-sm">ISO 27001:2022 Certified</span>
-                <span className="text-gray-300 mx-2">|</span>
-                <div className="flex items-center gap-4 text-sm text-gray-500">
-                  <span>CILA Member</span>
-                  <span>AICLA Member</span>
-                  <span>IBA Member</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-6 text-sm text-gray-400">
-                {["AIG", "AXA", "Chubb", "Allianz", "Munich Re", "Zurich"].map((client) => (
-                  <span key={client} className="font-medium">{client}</span>
-                ))}
+            <div className="flex items-center justify-center gap-3">
+              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span className="font-medium text-[#051A2D] text-sm">ISO 27001:2022 Certified</span>
+              <span className="text-gray-300 mx-2">|</span>
+              <div className="flex items-center gap-4 text-sm text-gray-500">
+                <span>CILA Member</span>
+                <span>AICLA Member</span>
+                <span>IBA Member</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Clients Section */}
+      <section className="py-10 bg-gray-50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-sm text-gray-500 mb-8">Trusted by leading insurers worldwide</p>
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-6 items-center">
+            {[
+              { name: "AIG", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/AIG-B-300x300.jpg" },
+              { name: "Allianz", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/Allianz-300x300.jpg" },
+              { name: "AXA", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/axa-300x300.jpg" },
+              { name: "CHUBB", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/CHUBB-300x300.jpg" },
+              { name: "Munich RE", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/Munich-RE-300x300.jpg" },
+              { name: "Swiss Re", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/swissRE-300x300.jpg" },
+              { name: "Zurich", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/zurich-300x300.jpg" },
+              { name: "QBE", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/qbe-300x300.jpg" },
+            ].map((client) => (
+              <div key={client.name} className="flex items-center justify-center">
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={80}
+                  height={80}
+                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-16 bg-white">
