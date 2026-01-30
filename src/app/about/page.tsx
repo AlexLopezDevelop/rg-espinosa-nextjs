@@ -91,7 +91,7 @@ export default function AboutPage() {
                   <span className="text-brand-blue font-bold text-lg">{item.year}</span>
                 </div>
                 <div className="w-px bg-brand-blue/30 relative">
-                  <div className="absolute top-1 -left-1.5 w-3 h-3 rounded-full bg-brand-blue" />
+                  <div className="absolute top-1 -left-1.5 w-3 h-3 rounded-full bg-brand-orange shadow-md" />
                 </div>
                 <div className="pb-8">
                   <h4 className="font-semibold text-brand-blue">{item.title}</h4>

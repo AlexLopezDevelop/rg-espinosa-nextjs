@@ -149,3 +149,76 @@
     @apply hidden!;
   }
 }
+
+@layer utilities {
+  /* Grid that auto-centers incomplete rows */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    max-width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(4, minmax(0, 280px));
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .team-grid {
+      grid-template-columns: repeat(3, minmax(0, 280px));
+      justify-content: center;
+    }
+  }
+
+  /* Infinite logo carousel - Wall Street style */
+  .logo-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+
+  .logo-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .logo-item {
+    flex-shrink: 0;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

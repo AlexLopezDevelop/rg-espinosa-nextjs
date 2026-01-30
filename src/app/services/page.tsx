@@ -135,7 +135,7 @@ export default function ServicesPage() {
               { step: "4", title: "Resolution", desc: "Final recommendations and settlement support." },
             ].map((item, i) => (
               <div key={i}>
-                <div className="w-10 h-10 bg-brand-blue text-white rounded flex items-center justify-center mb-4 font-bold">
+                <div className="w-10 h-10 bg-gradient-to-br from-brand-orange to-brand-orange-hover text-white rounded-lg flex items-center justify-center mb-4 font-bold shadow-lg">
                   {item.step}
                 </div>
                 <h4 className="font-semibold text-brand-blue mb-2">{item.title}</h4>

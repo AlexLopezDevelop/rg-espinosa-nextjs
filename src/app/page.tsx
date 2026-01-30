@@ -74,31 +74,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <section className="py-10 bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Clients Section - Infinite Carousel */}
+      <section className="py-12 bg-gray-50 border-b border-gray-200 overflow-hidden">
+        <div className="max-w-full">
           <p className="text-center text-sm text-gray-500 mb-8">Trusted by leading insurers worldwide</p>
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-6 items-center">
-            {[
-              { name: "AIG", logo: "/logos/aig.jpg" },
-              { name: "Allianz", logo: "/logos/allianz.jpg" },
-              { name: "AXA", logo: "/logos/axa.jpg" },
-              { name: "CHUBB", logo: "/logos/chubb.jpg" },
-              { name: "Munich RE", logo: "/logos/munich-re.jpg" },
-              { name: "Swiss Re", logo: "/logos/swiss-re.jpg" },
-              { name: "Zurich", logo: "/logos/zurich.jpg" },
-              { name: "QBE", logo: "/logos/qbe.jpg" },
-            ].map((client) => (
-              <div key={client.name} className="flex items-center justify-center">
-                <Image
-                  src={client.logo}
-                  alt={client.name}
-                  width={100}
-                  height={100}
-                  className="h-16 w-auto grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
-                />
-              </div>
-            ))}
+          <div className="logo-carousel">
+            <div className="logo-track">
+              {/* First set of logos */}
+              {[
+                { name: "AIG", logo: "/logos/aig.jpg" },
+                { name: "Allianz", logo: "/logos/allianz.jpg" },
+                { name: "AXA", logo: "/logos/axa.jpg" },
+                { name: "CHUBB", logo: "/logos/chubb.jpg" },
+                { name: "Munich RE", logo: "/logos/munich-re.jpg" },
+                { name: "Swiss Re", logo: "/logos/swiss-re.jpg" },
+                { name: "Zurich", logo: "/logos/zurich.jpg" },
+                { name: "QBE", logo: "/logos/qbe.jpg" },
+              ].map((client) => (
+                <div key={client.name} className="logo-item">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={120}
+                    className="h-14 w-auto grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {[
+                { name: "AIG", logo: "/logos/aig.jpg" },
+                { name: "Allianz", logo: "/logos/allianz.jpg" },
+                { name: "AXA", logo: "/logos/axa.jpg" },
+                { name: "CHUBB", logo: "/logos/chubb.jpg" },
+                { name: "Munich RE", logo: "/logos/munich-re.jpg" },
+                { name: "Swiss Re", logo: "/logos/swiss-re.jpg" },
+                { name: "Zurich", logo: "/logos/zurich.jpg" },
+                { name: "QBE", logo: "/logos/qbe.jpg" },
+              ].map((client, idx) => (
+                <div key={`${client.name}-duplicate-${idx}`} className="logo-item">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={120}
+                    className="h-14 w-auto grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -143,7 +167,7 @@ export default function HomePage() {
                 key={i}
                 className="p-6 bg-gray-50 border border-gray-200 rounded-lg hover:border-brand-blue transition-colors"
               >
-                <div className="w-10 h-10 bg-brand-blue rounded flex items-center justify-center mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-brand-blue to-brand-orange rounded flex items-center justify-center mb-4">
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={service.icon} />
                   </svg>
@@ -178,7 +202,7 @@ export default function HomePage() {
                   { title: "ISO 27001 Certified", desc: "Information security management certified to international standards." },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-brand-orange to-brand-orange-hover flex items-center justify-center shrink-0 mt-0.5 shadow-md">
                       <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>

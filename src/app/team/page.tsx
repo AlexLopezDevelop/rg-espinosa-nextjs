@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const teamByCountry = [
   {
@@ -123,6 +126,16 @@ const teamByCountry = [
 ];
 
 export default function TeamPage() {
+  const [expandedSections, setExpandedSections] = useState<number[]>([0]);
+
+  const toggleSection = (index: number) => {
+    setExpandedSections(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <>
       {/* Hero */}
@@ -180,51 +193,83 @@ export default function TeamPage() {
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-brand-blue mb-12 text-center">Our Global Team</h2>
 
-          <div className="space-y-12">
-            {teamByCountry.map((location, i) => (
-              <div key={i} className="bg-white rounded-sm border border-gray-200 overflow-hidden">
-                <div className="bg-gradient-to-r from-brand-blue to-brand-blue-light px-6 py-4">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">{location.flag}</span>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">{location.country}</h3>
-                      {location.subtitle && (
-                        <p className="text-sm text-white/70">{location.subtitle}</p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {location.members.map((member, j) => (
-                      <div key={j} className="flex flex-col items-center text-center p-4 bg-gray-50 rounded-sm">
-                        <div className="w-24 h-24 rounded-full overflow-hidden mb-3 border-2 border-gray-200">
-                          <Image
-                            src={member.photo}
-                            alt={member.name}
-                            width={96}
-                            height={96}
-                            className="w-full h-full object-cover"
-                          />
+          <div className="space-y-6">
+            {teamByCountry.map((location, i) => {
+              const isExpanded = expandedSections.includes(i);
+              const memberCount = location.members.length;
+
+              return (
+                <div key={i} className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden transition-all hover:border-brand-blue/30">
+                  <button
+                    onClick={() => toggleSection(i)}
+                    className="w-full bg-gradient-to-r from-brand-blue to-brand-blue-light px-6 py-5 transition-all hover:from-brand-blue-hover hover:to-brand-blue"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <span className="text-3xl">{location.flag}</span>
+                        <div className="text-left">
+                          <h3 className="text-xl font-semibold text-white">{location.country}</h3>
+                          {location.subtitle && (
+                            <p className="text-sm text-white/70">{location.subtitle}</p>
+                          )}
                         </div>
-                        <h4 className="font-semibold text-brand-blue">{member.name}</h4>
-                        <p className="text-sm text-gray-500 mb-2">{member.title}</p>
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#0077b5] hover:text-[#005885] transition-colors"
-                        >
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                          </svg>
-                        </a>
+                        <span className="ml-4 px-3 py-1 bg-brand-orange text-white text-sm font-semibold rounded-full">
+                          {memberCount} {memberCount === 1 ? 'Member' : 'Members'}
+                        </span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-white/80 text-sm font-medium">
+                          {isExpanded ? 'Collapse' : 'Expand'}
+                        </span>
+                        <svg
+                          className={`w-6 h-6 text-white transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  {isExpanded && (
+                    <div className="p-8 bg-gray-50">
+                      <div className="flex justify-center">
+                        <div className="team-grid w-full max-w-[1400px]">
+                          {location.members.map((member, j) => (
+                            <div key={j} className="flex flex-col items-center text-center p-5 bg-white rounded-lg border-2 border-gray-100 hover:border-brand-orange/50 hover:shadow-md transition-all group w-full max-w-[280px]">
+                              <div className="w-28 h-28 rounded-full overflow-hidden mb-4 border-3 border-brand-blue/20 group-hover:border-brand-orange transition-colors">
+                                <Image
+                                  src={member.photo}
+                                  alt={member.name}
+                                  width={112}
+                                  height={112}
+                                  className="w-full h-full object-cover"
+                                />
+                              </div>
+                              <h4 className="font-semibold text-brand-blue group-hover:text-brand-orange transition-colors">{member.name}</h4>
+                              <p className="text-sm text-gray-600 mb-3 min-h-[40px] flex items-center">{member.title}</p>
+                              <a
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#0077b5] hover:text-brand-orange transition-colors"
+                                aria-label={`${member.name}'s LinkedIn profile`}
+                              >
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
