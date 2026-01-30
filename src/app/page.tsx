@@ -6,106 +6,83 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#051A2D] py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-[#22A9FF] font-medium mb-4 tracking-wide uppercase text-sm">
-                International Insurance Adjusters
-              </p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-                Professional Claims Management Across the Americas
-              </h1>
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Since 2005, R&G Espinosa has delivered expert claims adjusting services
-                combining deep local knowledge with rigorous international standards.
-                We serve insurers, reinsurers, and corporations throughout the Americas and beyond.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-12">
-                <Button size="lg" className="bg-[#004E99] hover:bg-[#003d7a] text-white">
-                  Report a Claim
-                </Button>
-                <Button size="lg" className="bg-white text-[#051A2D] hover:bg-gray-100">
-                  Request a Quote
-                </Button>
-              </div>
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop"
+            alt="Global business skyline"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#051A2D]/85" />
+        </div>
 
-              {/* Stats */}
-              <div className="grid grid-cols-4 gap-6 pt-8 border-t border-white/20">
-                {[
-                  { number: "20+", label: "Years Experience" },
-                  { number: "13+", label: "Global Offices" },
-                  { number: "64+", label: "Expert Adjusters" },
-                  { number: "5,000+", label: "Claims Resolved" },
-                ].map((stat, i) => (
-                  <div key={i}>
-                    <div className="text-2xl lg:text-3xl font-bold text-white">{stat.number}</div>
-                    <div className="text-xs text-gray-400">{stat.label}</div>
-                  </div>
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+          <p className="text-[#22A9FF] font-medium mb-4 tracking-wide uppercase text-sm">
+            International Insurance Adjusters
+          </p>
+          <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+            Professional Claims Management<br className="hidden lg:block" /> Across the Americas
+          </h1>
+          <p className="text-lg lg:text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Since 2005, R&G Espinosa has delivered expert claims adjusting services
+            combining deep local knowledge with rigorous international standards.
+            We serve insurers, reinsurers, and corporations throughout the Americas and beyond.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <Button size="lg" className="bg-[#004E99] hover:bg-[#003d7a] text-white px-8">
+              Report a Claim
+            </Button>
+            <Button size="lg" className="bg-white text-[#051A2D] hover:bg-gray-100 px-8">
+              Request a Quote
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-white/20 max-w-4xl mx-auto">
+            {[
+              { number: "20+", label: "Years Experience" },
+              { number: "13+", label: "Global Offices" },
+              { number: "64+", label: "Expert Adjusters" },
+              { number: "5,000+", label: "Claims Resolved" },
+            ].map((stat, i) => (
+              <div key={i}>
+                <div className="text-3xl lg:text-4xl font-bold text-white">{stat.number}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Credentials Bar */}
+        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span className="font-medium text-[#051A2D] text-sm">ISO 27001:2022 Certified</span>
+                <span className="text-gray-300 mx-2">|</span>
+                <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <span>CILA Member</span>
+                  <span>AICLA Member</span>
+                  <span>IBA Member</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-6 text-sm text-gray-400">
+                {["AIG", "AXA", "Chubb", "Allianz", "Munich Re", "Zurich"].map((client) => (
+                  <span key={client} className="font-medium">{client}</span>
                 ))}
               </div>
             </div>
-
-            <div className="relative">
-              <div className="relative rounded-sm overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
-                  alt="Professional team of insurance adjusters"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-
-              {/* Credentials bar */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4">
-                <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                    <span className="font-medium text-[#051A2D]">ISO 27001:2022 Certified</span>
-                  </div>
-                  <div className="flex items-center gap-4 text-gray-500">
-                    <span>CILA</span>
-                    <span>AICLA</span>
-                    <span>IBA</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Clients Bar */}
-      <section className="py-8 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <span className="text-sm text-gray-500">Trusted by leading insurers worldwide</span>
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              {["AIG", "AXA", "CHUBB", "Allianz", "Munich Re", "QBE", "Swiss Re", "Zurich"].map((client) => (
-                <span key={client} className="text-lg font-semibold text-gray-300">{client}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Clients Bar */}
-      <section className="py-6 bg-gray-50 border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <span className="text-sm text-gray-500 font-medium">Trusted by leading insurers:</span>
-            <div className="flex flex-wrap items-center justify-center gap-8">
-              {["AIG", "AXA", "Chubb", "Allianz", "Munich Re", "QBE", "Swiss Re", "Zurich"].map((client) => (
-                <span key={client} className="text-sm font-semibold text-gray-400">{client}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-16 bg-white">
