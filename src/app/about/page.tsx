@@ -40,8 +40,8 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="rounded-sm overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop"
-                alt="R&G Espinosa professionals"
+                src="https://images.unsplash.com/photo-1526470608268-f674ce90ebd4?w=800&h=600&fit=crop"
+                alt="Global business network"
                 width={800}
                 height={600}
                 className="w-full h-full object-cover"
