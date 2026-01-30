@@ -82,14 +82,14 @@ export default function HomePage() {
           <p className="text-center text-sm text-gray-500 mb-8">Trusted by leading insurers worldwide</p>
           <div className="grid grid-cols-4 md:grid-cols-8 gap-6 items-center">
             {[
-              { name: "AIG", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/AIG-B-300x300.jpg" },
-              { name: "Allianz", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/Allianz-300x300.jpg" },
-              { name: "AXA", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/axa-300x300.jpg" },
-              { name: "CHUBB", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/CHUBB-300x300.jpg" },
-              { name: "Munich RE", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/Munich-RE-300x300.jpg" },
-              { name: "Swiss Re", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/swissRE-300x300.jpg" },
-              { name: "Zurich", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/zurich-300x300.jpg" },
-              { name: "QBE", logo: "https://rygespinosa.com/wp-content/uploads/2023/04/qbe-300x300.jpg" },
+              { name: "AIG", logo: "/logos/aig.jpg" },
+              { name: "Allianz", logo: "/logos/allianz.jpg" },
+              { name: "AXA", logo: "/logos/axa.jpg" },
+              { name: "CHUBB", logo: "/logos/chubb.jpg" },
+              { name: "Munich RE", logo: "/logos/munich-re.jpg" },
+              { name: "Swiss Re", logo: "/logos/swiss-re.jpg" },
+              { name: "Zurich", logo: "/logos/zurich.jpg" },
+              { name: "QBE", logo: "/logos/qbe.jpg" },
             ].map((client) => (
               <div key={client.name} className="flex items-center justify-center">
                 <Image
