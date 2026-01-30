@@ -38,13 +38,13 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=500&fit=crop"
+                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop"
                 alt="R&G Espinosa corporate office"
-                width={600}
-                height={500}
-                className="w-full h-auto"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
               />
             </div>
             <div>

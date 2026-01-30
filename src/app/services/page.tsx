@@ -6,13 +6,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const services = [
   {
     title: "Property & Engineering",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop",
     description: "Our largest division handles commercial and residential property claims, from natural disasters to equipment breakdown. We deploy teams of engineers, forensic accountants, and claims specialists.",
     features: ["Damage Assessment", "Policy Analysis", "Loss Quantification", "Forensic Investigation", "Business Interruption", "Expert Coordination"],
   },
   {
     title: "Financial Lines & Casualty",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
     description: "Complex financial and liability claims require specialized expertise. Our team handles cyber incidents, professional indemnity, directors & officers liability, and general casualty claims.",
     features: ["Cyber & Data Breach", "D&O Liability", "Professional Indemnity", "BBB (Bankers Blanket)", "General Liability", "Products Liability"],
   },
@@ -77,13 +77,13 @@ export default function ServicesPage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=500&fit=crop"
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop"
                 alt="Claims adjusting services"
-                width={600}
-                height={500}
-                className="w-full h-auto"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>

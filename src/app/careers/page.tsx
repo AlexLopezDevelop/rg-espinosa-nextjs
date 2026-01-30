@@ -54,13 +54,13 @@ export default function CareersPage() {
                 and handling diverse, challenging claims across multiple industries.
               </p>
             </div>
-            <div className="rounded-sm overflow-hidden">
+            <div className="rounded-sm overflow-hidden aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop"
-                alt="Team collaboration"
-                width={600}
-                height={500}
-                className="w-full h-auto"
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop"
+                alt="Professional career growth"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
