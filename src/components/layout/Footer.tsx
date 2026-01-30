@@ -67,16 +67,40 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Certifications */}
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center gap-6">
+              <div className="bg-white p-2 rounded">
+                <Image
+                  src="https://www.abptech.com/sites/abptech/files/u16/ISO_27001_Final%20Logo.jpg"
+                  alt="ISO 27001:2022 Certified"
+                  width={80}
+                  height={80}
+                  className="h-16 w-auto"
+                />
+              </div>
+              <div className="text-sm">
+                <div className="text-white font-medium">ISO 27001:2022 Certified</div>
+                <div className="text-white/50">Information Security Management</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 text-sm text-white/60">
+              <span>CILA Member</span>
+              <span>AICLA Member</span>
+              <span>IBA Member</span>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/40 text-sm">
             &copy; 2026 R&G Espinosa International Adjusters. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-white/40">
-            <span>ISO 27001</span>
-            <span>CILA</span>
-            <span>AICLA</span>
-            <span>IBA</span>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

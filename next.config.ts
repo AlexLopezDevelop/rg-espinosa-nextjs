@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "rygespinosa.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.abptech.com",
+      },
     ],
   },
 };
