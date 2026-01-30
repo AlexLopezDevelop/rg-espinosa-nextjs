@@ -95,9 +95,9 @@ export default function HomePage() {
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={80}
-                  height={80}
-                  className="h-12 w-auto grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
+                  width={100}
+                  height={100}
+                  className="h-16 w-auto grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100"
                 />
               </div>
             ))}
